@@ -1,348 +1,497 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #181818 0%, #232323 100%);
+    color: #f5f5f5;
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+/* Variables CSS para colores DHL */
 :root {
     --dhl-red: #D40511;
     --dhl-yellow: #FFCC00;
-    --dhl-dark: #1a1a1a;
-    --dhl-light-gray: #f8f8f8;
-    --dhl-gray: #666666;
-    --shadow-primary: 0 8px 25px rgba(212, 5, 17, 0.2);
-    --shadow-secondary: 0 4px 15px rgba(0,0,0,0.1);
+    --dhl-dark: #1a1a2e;
+    --dhl-gray: #cccccc;
+    --shadow-primary: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-secondary: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Animaciones básicas */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes slideUp {
-    0% { transform: translateY(20px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
-/* Base styles */
-.reveal {
-    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-    background: #ffffff;
-    font-size: 24px;
+/* Contenedor principal de la presentación */
+.presentation-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     position: relative;
 }
 
-/* Typography */
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
-    color: var(--dhl-dark);
-    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.5em;
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
-.reveal h1 {
-    font-size: 2.2em;
-    color: var(--dhl-red);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-
-.reveal h2 {
-    font-size: 1.4em;
-    border-bottom: 3px solid var(--dhl-yellow);
-    padding-bottom: 8px;
-    display: inline-block;
-}
-
-/* Container system */
-.slide-container {
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
+/* Estilos de las slides */
+section {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: var(--shadow-secondary);
-    min-height: 80vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+section.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    animation: fadeInSlide 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+/* Contenedor de slide */
+.slide-container {
+    width: 100%;
+    max-width: 1400px;
+    height: calc(100vh - 40px);
+    background: rgba(24, 24, 24, 0.96);
+    border: 2.5px solid var(--dhl-red);
+    border-radius: 24px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.25), 0 20px 40px rgba(212,5,17,0.10), inset 0 1px 0 rgba(255,255,255,0.04);
+    position: relative;
+    overflow: hidden;
 }
 
+.slide-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--dhl-red), var(--dhl-yellow), var(--dhl-red));
+    border-radius: 24px 24px 0 0;
+    opacity: 0.7;
+}
+
+/* Header de slide */
 .slide-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--dhl-yellow);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--dhl-red);
+    position: relative;
 }
 
+.slide-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--dhl-yellow);
+    opacity: 0.7;
+}
+
+.slide-header h2 {
+    font-size: 2.4em;
+    color: var(--dhl-red);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(212, 5, 17, 0.18);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.dhl-logo-img {
+    height: 55px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.duoc-logo-img {
+    height: 45px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Contenido de slide */
 .slide-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 10px;
+    gap: 25px;
 }
 
-.slide-footer {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid #e0e0e0;
-    text-align: center;
-}
-
-/* Title slide styles */
-.reveal .title-slide {
-    background: #ffffff;
-    text-align: center;
-}
-
-.title-slide .slide-container {
-    background: rgba(255, 255, 255, 0.98);
-    border: 2px solid var(--dhl-yellow);
-}
-
-/* Conclusion and questions slides */
-.conclusion-slide .slide-container,
-.questions-slide .slide-container {
-    background: rgba(248, 248, 248, 0.8);
-}
-
-/* Slide positioning */
-.reveal .slides section {
-    text-align: left;
-    padding: 15px;
-}
-
-.reveal .slides section:not(.title-slide):not(.conclusion-slide):not(.questions-slide) {
-    background: transparent;
-}
-
-/* Logo styles */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.dhl-logo-img, .duoc-logo-img {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-}
-
-/* Metric boxes */
-.metric-box {
-    background: linear-gradient(135deg, var(--dhl-red) 0%, #b8040f 100%);
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px 0;
-    box-shadow: var(--shadow-primary);
-}
-
-
-
-.problem-box {
-    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
-    color: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 10px 0;
-    box-shadow: var(--shadow-secondary);
-}
-
-.solution-box {
-    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
-    color: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 10px 0;
-    box-shadow: var(--shadow-secondary);
-}
-
-/* Stats grid */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin: 15px 0;
-}
-
-.stat-item {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: var(--shadow-secondary);
-    border-left: 4px solid var(--dhl-yellow);
-}
-
-.stat-number {
-    font-size: 2.5em;
-    font-weight: 700;
+/* Títulos */
+h1 {
+    font-size: 3.5em;
+    font-weight: 800;
     color: var(--dhl-red);
-    display: block;
-    margin-bottom: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 8px rgba(212, 5, 17, 0.25);
 }
 
-.stat-label {
-    font-size: 0.9em;
-    color: var(--dhl-gray);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
 }
 
-/* Section headers */
-.section-header {
-    background: linear-gradient(135deg, var(--dhl-yellow) 0%, #e6b800 100%);
-    color: var(--dhl-dark);
-    padding: 10px 20px;
-    border-radius: 8px;
-    margin: 15px 0;
+h3 {
+    font-size: 1.8em;
+    color: var(--dhl-yellow);
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    text-shadow: 0 2px 8px rgba(255,204,0,0.10);
+}
+
+h4 {
+    font-size: 1.4em;
+    color: #fff;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
-/* Phase timeline */
-.phase-timeline {
+/* Footer de slide */
+.slide-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 0;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--dhl-yellow);
+    color: #fff;
     position: relative;
 }
 
-.phase-item {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    flex: 1;
-    margin: 0 10px;
-    box-shadow: var(--shadow-secondary);
-    border-top: 3px solid var(--dhl-red);
+.slide-footer::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--dhl-red);
+    opacity: 0.7;
 }
 
-/* General text styles */
-.reveal p {
-    margin-bottom: 1em;
-    line-height: 1.6;
+.slide-footer p {
+    margin: 4px 0;
+    color: #fff;
+    font-weight: 500;
+}
+
+.slide-footer p:first-child {
+    font-weight: 700;
+    color: var(--dhl-yellow);
+    font-size: 1.1em;
+}
+
+.slide-footer p:last-child {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+/* Estilos específicos para la portada */
+.title-slide .slide-container {
+    text-align: center;
+    justify-content: center;
+}
+
+.title-slide .slide-header {
+    justify-content: center;
+    border-bottom: 2px solid var(--dhl-red);
+    margin-bottom: 30px;
+}
+
+.title-slide .dhl-logo-img {
+    height: 80px;
+}
+
+.title-slide .slide-content {
+    justify-content: center;
+    text-align: center;
+}
+
+.title-slide h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.title-slide h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.title-slide .slide-footer {
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.title-slide .slide-footer div {
+    text-align: left;
+}
+
+.title-slide .duoc-logo-img {
+    height: 45px;
+}
+
+/* Grid de estadísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.stat-item {
+    background: rgba(30,30,30,0.98);
+    padding: 25px 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1.5px solid var(--dhl-yellow);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18), 0 8px 16px rgba(255,204,0,0.05);
+    transition: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5em;
+    font-weight: 800;
+    color: var(--dhl-yellow);
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: -0.5px;
+}
+
+.stat-label {
+    font-size: 0.95em;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Cajas de contenido */
+.metric-box {
+    background: rgba(30,30,30,0.98);
+    border: 2px solid var(--dhl-yellow);
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    margin: 25px 0;
+    box-shadow: 0 15px 30px rgba(255,204,0,0.10), 0 8px 16px rgba(0,0,0,0.10);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-box p {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--dhl-yellow);
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+.problem-box {
+    background: rgba(40,0,0,0.98);
+    border: 1.5px solid var(--dhl-red);
+    padding: 25px;
+    border-radius: 16px;
+    color: #fff;
+    box-shadow: 0 15px 30px rgba(212,5,17,0.10), 0 8px 16px rgba(0,0,0,0.10);
+    position: relative;
+    overflow: hidden;
+}
+
+.problem-box h4 {
+    color: var(--dhl-red);
+    font-weight: 700;
+}
+
+.problem-box p, .problem-box li {
+    color: #fff;
+}
+
+.problem-box li::before {
+    color: var(--dhl-yellow);
+}
+
+.solution-box {
+    background: rgba(30,30,0,0.98);
+    border: 1.5px solid var(--dhl-yellow);
+    padding: 25px;
+    border-radius: 16px;
+    color: #fff;
+    box-shadow: 0 15px 30px rgba(255,204,0,0.10), 0 8px 16px rgba(0,0,0,0.10);
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-box h4 {
+    color: var(--dhl-yellow);
+    font-weight: 700;
+}
+
+.solution-box p, .solution-box li {
+    color: #fff;
+}
+
+.solution-box li::before {
+    color: var(--dhl-yellow);
+}
+
+/* Estilos para la slide de conclusiones */
+.conclusion-slide .slide-header h2 {
+    color: var(--dhl-red);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.conclusion-slide .slide-header h3 {
+    color: var(--dhl-dark);
+    font-size: 1.4em;
+    font-weight: 400;
+}
+
+.conclusion-slide .metric-box {
+    background: linear-gradient(135deg, var(--dhl-yellow) 0%, #e6b800 100%);
+    border: 2px solid var(--dhl-yellow);
+}
+
+.conclusion-slide .metric-box h3 {
     color: var(--dhl-dark);
 }
 
-.reveal strong {
+.conclusion-slide .metric-box p {
+    color: var(--dhl-dark);
+}
+
+.conclusion-slide .solution-box {
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+    color: white;
+}
+
+.conclusion-slide .solution-box p {
+    color: white;
+}
+
+/* Estilos para la slide de preguntas */
+.questions-slide .slide-header {
+    justify-content: center;
+    border-bottom: 2px solid var(--dhl-yellow);
+}
+
+.questions-slide .metric-box h1 {
     color: var(--dhl-red);
-    font-weight: 600;
+    font-size: 2.8em;
+    margin-bottom: 10px;
 }
 
-.reveal ul {
-    margin-left: 20px;
+.questions-slide .metric-box h2 {
+    color: var(--dhl-dark);
+    font-size: 1.6em;
+    font-weight: 400;
 }
 
-.reveal li {
-    margin-bottom: 0.8em;
-    list-style: none;
-    position: relative;
-    padding-left: 25px;
-}
-
-.reveal li::before {
-    content: "▶";
+.questions-slide h3 {
     color: var(--dhl-red);
-    position: absolute;
-    left: 0;
-    top: 0;
+    font-size: 1.8em;
+    margin-bottom: 20px;
 }
 
-/* Progress bar */
-.reveal .progress {
-    background: rgba(212, 5, 17, 0.2);
+.questions-slide p {
+    color: var(--dhl-dark);
+    font-size: 1.1em;
 }
 
-.reveal .progress span {
-    background: var(--dhl-red);
+.questions-slide strong {
+    color: var(--dhl-red);
 }
 
-/* Utility classes */
+/* Animaciones premium */
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(40px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-container, .metric-box, .problem-box, .solution-box, .stat-item {
+    animation: fadeInUp 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+.slide-content > * {
+    animation: fadeInUp 0.9s cubic-bezier(.4,0,.2,1);
+    animation-fill-mode: both;
+}
+
+.slide-content > *:nth-child(1) { animation-delay: 0.1s; }
+.slide-content > *:nth-child(2) { animation-delay: 0.2s; }
+.slide-content > *:nth-child(3) { animation-delay: 0.3s; }
+.slide-content > *:nth-child(4) { animation-delay: 0.4s; }
+.slide-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Utilidades */
 .highlight {
-    background: var(--dhl-yellow);
-    padding: 2px 6px;
-    border-radius: 3px;
+    color: var(--dhl-yellow);
+    font-weight: 600;
 }
 
 .success {
-    color: #28a745;
-    font-weight: 600;
+    color: var(--dhl-yellow);
 }
 
-/* Responsive design */
+/* Responsive */
 @media (max-width: 768px) {
-    .reveal {
-        font-size: 20px;
-    }
-    
-    .reveal h1 {
-        font-size: 1.8em;
-    }
-    
-    .reveal h2 {
-        font-size: 1.2em;
-    }
-    
-    .slide-container {
-        width: 95%;
-        padding: 20px;
-        min-height: 75vh;
-    }
-    
-    .slide-header {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .logo-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .dhl-logo-img, .duoc-logo-img {
-        height: 30px;
-    }
-    
     .stats-grid {
         grid-template-columns: 1fr;
     }
     
-    .phase-timeline {
-        flex-direction: column;
-        gap: 15px;
+    .slide-container {
+        padding: 20px;
     }
     
-    .phase-item {
-        margin: 0;
-    }
-}
-
-/* Print styles */
-@media print {
-    .reveal {
-        background: white !important;
+    h1 {
+        font-size: 2.5em;
     }
     
-    .metric-box, .problem-box, .solution-box {
-        background: #f8f9fa !important;
-        color: black !important;
-        box-shadow: none !important;
-    }
-    
-    .stat-item {
-        box-shadow: none !important;
-        border: 1px solid #ddd !important;
-    }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+    h2 {
+        font-size: 1.5em;
     }
 } 

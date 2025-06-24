@@ -4,58 +4,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHL Express - Mejora Continua en Entregas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/styles.css">
-
 </head>
 <body>
-    <div class="reveal">
+    <div class="presentation-container">
         <div class="slides">
             
             <!-- Slide 1: Título -->
-            <section class="title-slide">
+            <section class="title-slide active">
                 <div class="slide-container">
-                    <div class="slide-header" style="border-bottom: 3px solid var(--dhl-red); margin-bottom: 40px;">
-                        <div class="logo-container" style="justify-content: center;">
-                            <img src="./static/img/dhl-logo.svg" alt="DHL Logo" class="dhl-logo-img" style="height: 80px;">
+                    <div class="slide-header">
+                        <div class="logo-container">
+                            <img src="./static/img/dhl-logo.svg" alt="DHL Logo" class="dhl-logo-img">
                         </div>
                     </div>
                     
-                    <div class="slide-content" style="text-align: center;">
-                        <h1 style="font-size: 3.5em; margin-bottom: 20px; color: var(--dhl-red);">EXPRESS</h1>
-                        <h2 style="font-size: 2em; margin-bottom: 30px; color: var(--dhl-dark);">Mejora Continua en Proceso de Entrega</h2>
+                    <div class="slide-content">
+                        <h1>EXPRESS</h1>
+                        <h2>Mejora Continua en Proceso de Entrega</h2>
                         
-                        <div style="background: var(--dhl-yellow); padding: 20px; border-radius: 10px; margin: 30px 0; box-shadow: var(--shadow-secondary);">
-                            <p style="font-size: 1.3em; font-weight: 600; color: var(--dhl-red); margin: 0;">
-                                Aplicación del Ciclo de Deming
-                            </p>
+                        <div class="metric-box">
+                            <p>Aplicación del Ciclo de Deming</p>
                         </div>
                         
-                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 40px 0;">
-                            <div class="stat-item" style="background: var(--dhl-red); color: white;">
-                                <span class="stat-number" style="color: white;">25</span>
-                                <span class="stat-label" style="color: var(--dhl-yellow);">Fallas Mensuales</span>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">25</span>
+                                <span class="stat-label">Fallas Mensuales</span>
                             </div>
-                            <div class="stat-item" style="background: var(--dhl-yellow); color: var(--dhl-red);">
-                                <span class="stat-number" style="color: var(--dhl-red);">80%</span>
-                                <span class="stat-label" style="color: var(--dhl-dark);">Mejora Proyectada</span>
+                            <div class="stat-item">
+                                <span class="stat-number">80%</span>
+                                <span class="stat-label">Mejora Proyectada</span>
                             </div>
-                            <div class="stat-item" style="background: var(--dhl-dark); color: white;">
-                                <span class="stat-number" style="color: white;">$655K</span>
-                                <span class="stat-label" style="color: var(--dhl-yellow);">Inversión Total</span>
+                            <div class="stat-item">
+                                <span class="stat-number">$655K</span>
+                                <span class="stat-label">Inversión Total</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="slide-footer" style="border-top: 2px solid var(--dhl-yellow); color: var(--dhl-dark); margin-top: 40px;">
-                        <div style="text-align: left;">
-                            <p style="font-weight: 600; margin: 0;">Equipo de Investigación:</p>
-                            <p style="margin: 5px 0;">Camila Quilodran | Leandro Navarrete | Diego Bravo</p>
-                            <p style="font-size: 0.9em; color: var(--dhl-gray);">Gestión de Calidad 003V | Junio 2025</p>
+                    <div class="slide-footer">
+                        <div>
+                            <p>Equipo de Investigación:</p>
+                            <p>Camila Quilodran | Leandro Navarrete | Diego Bravo</p>
+                            <p>Gestión de Calidad 003V | Junio 2025</p>
                         </div>
-                        <img src="./static/img/duoc.png" alt="Duoc UC Logo" class="duoc-logo-img" style="height: 45px;">
+                        <img src="./static/img/duoc.png" alt="Duoc UC Logo" class="duoc-logo-img">
                     </div>
                 </div>
             </section>
@@ -341,343 +336,415 @@
 
             <!-- Slide 7: Ciclo DEMING - Act -->
             <section>
-                <h2>Actuar - Estandarización y Mejora</h2>
-                
-                <div class="section-header">
-                    <h3>Actuar (Act) - Institucionalización de Mejores Prácticas</h3>
-                </div>
-                
-                <div class="solution-box">
-                    <h3>Protocolo de Entrega Estandarizado</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 15px;">
-                        <div style="text-align: center;">
-                            <h4>Pre-Entrega</h4>
-                            <p>Verificación de ruta y contacto con cliente</p>
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <h2>Actuar - Estandarización y Mejora</h2>
+                        <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img" style="height: 40px;">
+                    </div>
+                    
+                    <div class="slide-content">
+                        <div class="section-header">
+                            <h3>Actuar (Act) - Institucionalización de Mejores Prácticas</h3>
                         </div>
-                        <div style="text-align: center;">
-                            <h4>Durante Entrega</h4>
-                            <p>Identificación profesional y manejo seguro</p>
+                        
+                        <div class="solution-box">
+                            <h3>Protocolo de Entrega Estandarizado</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 15px;">
+                                <div style="text-align: center;">
+                                    <h4>Pre-Entrega</h4>
+                                    <p>Verificación de ruta y contacto con cliente</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <h4>Durante Entrega</h4>
+                                    <p>Identificación profesional y manejo seguro</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <h4>Post-Entrega</h4>
+                                    <p>Actualización de sistema y confirmación</p>
+                                </div>
+                            </div>
                         </div>
-                        <div style="text-align: center;">
-                            <h4>Post-Entrega</h4>
-                            <p>Actualización de sistema y confirmación</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">Quincenal</span>
+                                <span class="stat-label">Frecuencia Reuniones</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">8-10</span>
+                                <span class="stat-label">Participantes por Zona</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">$250</span>
+                                <span class="stat-label">Incentivo Mensual</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-box">
+                            <p><strong>Círculos de Calidad DHL: Sistema de mejora continua institucionalizado</strong></p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="stats-grid" style="grid-template-columns: 1fr 1fr 1fr;">
-                    <div class="stat-item">
-                        <span class="stat-number">Quincenal</span>
-                        <span class="stat-label">Frecuencia Reuniones</span>
+                    
+                    <div class="slide-footer">
+                        <span>Ciclo DEMING - Fase Act</span>
+                        <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img" style="height: 30px;">
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">8-10</span>
-                        <span class="stat-label">Participantes por Zona</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">$250</span>
-                        <span class="stat-label">Incentivo Mensual</span>
-                    </div>
-                </div>
-                
-                <div class="metric-box">
-                    <p><strong>Círculos de Calidad DHL: Sistema de mejora continua institucionalizado</strong></p>
                 </div>
             </section>
 
             <!-- Slide 8: Análisis de Causas -->
             <section>
-                <h2>Análisis de Causas Raíz</h2>
-                
-                <div class="section-header">
-                    <h3>Diagrama de Ishikawa - Factores Críticos de Fallas</h3>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                    <div class="problem-box">
-                        <h4>Factor Humano</h4>
-                        <ul style="margin-left: 0; list-style: none;">
-                            <li>• Alta rotación de conductores</li>
-                            <li>• Capacitación insuficiente</li>
-                            <li>• Desmotivación laboral</li>
-                            <li>• Supervisión limitada</li>
-                        </ul>
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <h2>Análisis de Causas Raíz</h2>
+                        <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img" style="height: 40px;">
                     </div>
                     
-                    <div class="problem-box">
-                        <h4>Procedimientos</h4>
-                        <ul style="margin-left: 0; list-style: none;">
-                            <li>• Rutas desactualizadas</li>
-                            <li>• Horarios inflexibles</li>
-                            <li>• Comunicación deficiente</li>
-                            <li>• Protocolos de re-entrega inexistentes</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                    <div class="problem-box">
-                        <h4>Materiales</h4>
-                        <ul style="margin-left: 0; list-style: none;">
-                            <li>• Embalaje genérico inadecuado</li>
-                            <li>• Etiquetas de baja calidad</li>
-                            <li>• Documentación incompleta</li>
-                            <li>• Protección insuficiente</li>
-                        </ul>
+                    <div class="slide-content">
+                        <div class="section-header">
+                            <h3>Diagrama de Ishikawa - Factores Críticos de Fallas</h3>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div class="problem-box">
+                                <h4>Factor Humano</h4>
+                                <ul style="margin-left: 0; list-style: none;">
+                                    <li>• Alta rotación de conductores</li>
+                                    <li>• Capacitación insuficiente</li>
+                                    <li>• Desmotivación laboral</li>
+                                    <li>• Supervisión limitada</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="problem-box">
+                                <h4>Procedimientos</h4>
+                                <ul style="margin-left: 0; list-style: none;">
+                                    <li>• Rutas desactualizadas</li>
+                                    <li>• Horarios inflexibles</li>
+                                    <li>• Comunicación deficiente</li>
+                                    <li>• Protocolos de re-entrega inexistentes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div class="problem-box">
+                                <h4>Materiales</h4>
+                                <ul style="margin-left: 0; list-style: none;">
+                                    <li>• Embalaje genérico inadecuado</li>
+                                    <li>• Etiquetas de baja calidad</li>
+                                    <li>• Documentación incompleta</li>
+                                    <li>• Protección insuficiente</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="problem-box">
+                                <h4>Equipos y Tecnología</h4>
+                                <ul style="margin-left: 0; list-style: none;">
+                                    <li>• Flota envejecida</li>
+                                    <li>• Ausencia de GPS</li>
+                                    <li>• Sistemas de seguridad deficientes</li>
+                                    <li>• Scanners obsoletos</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-box">
+                            <p><strong>Efecto Multiplicador:</strong> Cada factor deficiente amplifica los problemas de los otros componentes</p>
+                        </div>
                     </div>
                     
-                    <div class="problem-box">
-                        <h4>Equipos y Tecnología</h4>
-                        <ul style="margin-left: 0; list-style: none;">
-                            <li>• Flota envejecida</li>
-                            <li>• Ausencia de GPS</li>
-                            <li>• Sistemas de seguridad deficientes</li>
-                            <li>• Scanners obsoletos</li>
-                        </ul>
+                    <div class="slide-footer">
+                        <span>Análisis de Causas Raíz</span>
+                        <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img" style="height: 30px;">
                     </div>
-                </div>
-                
-                <div class="metric-box">
-                    <p><strong>Efecto Multiplicador:</strong> Cada factor deficiente amplifica los problemas de los otros componentes</p>
                 </div>
             </section>
 
             <!-- Slide 9: 6 Iniciativas Clave -->
             <section>
-                <h2>Plan de Acción - Iniciativas Estratégicas</h2>
-                
-                <div class="section-header">
-                    <h3>Seis Iniciativas Clave de Transformación</h3>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; font-size: 0.9em;">
-                    <div class="solution-box">
-                        <h4>Optimización de Rutas</h4>
-                        <p>Sistema dinámico inteligente</p>
-                        <div class="stat-item" style="margin-top: 10px;">
-                            <span class="stat-number success" style="font-size: 1.2em;">-30%</span>
-                            <span class="stat-label">Reducción tiempos</span>
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <h2>Plan de Acción - Iniciativas Estratégicas</h2>
+                        <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img" style="height: 40px;">
+                    </div>
+                    
+                    <div class="slide-content">
+                        <div class="section-header">
+                            <h3>Seis Iniciativas Clave de Transformación</h3>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; font-size: 0.9em;">
+                            <div class="solution-box">
+                                <h4>Optimización de Rutas</h4>
+                                <p>Sistema dinámico inteligente</p>
+                                <div class="stat-item" style="margin-top: 10px;">
+                                    <span class="stat-number success" style="font-size: 1.2em;">-30%</span>
+                                    <span class="stat-label">Reducción tiempos</span>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-box">
+                                <h4>Academia de Excelencia</h4>
+                                <p>Certificación profesional</p>
+                                <div class="stat-item" style="margin-top: 10px;">
+                                    <span class="stat-number success" style="font-size: 1.2em;">+20%</span>
+                                    <span class="stat-label">Productividad</span>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-box">
+                                <h4>Modernización de Flota</h4>
+                                <p>Vehículos inteligentes</p>
+                                <div class="stat-item" style="margin-top: 10px;">
+                                    <span class="stat-number success" style="font-size: 1.2em;">0%</span>
+                                    <span class="stat-label">Incidentes robos</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; font-size: 0.9em;">
+                            <div class="solution-box">
+                                <h4>Red DHL Points</h4>
+                                <p>Entrega alternativa</p>
+                                <div class="stat-item" style="margin-top: 10px;">
+                                    <span class="stat-number success" style="font-size: 1.2em;">-40%</span>
+                                    <span class="stat-label">Re-entregas</span>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-box">
+                                <h4>Transformación Digital</h4>
+                                <p>Ecosistema tecnológico</p>
+                                <div class="stat-item" style="margin-top: 10px;">
+                                    <span class="stat-number success" style="font-size: 1.2em;">-50%</span>
+                                    <span class="stat-label">Fallas totales</span>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-box">
+                                <h4>Sistema de Incentivos</h4>
+                                <p>Retención de talento</p>
+                                <div class="stat-item" style="margin-top: 10px;">
+                                    <span class="stat-number success" style="font-size: 1.2em;">-70%</span>
+                                    <span class="stat-label">Rotación</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="solution-box">
-                        <h4>Academia de Excelencia</h4>
-                        <p>Certificación profesional</p>
-                        <div class="stat-item" style="margin-top: 10px;">
-                            <span class="stat-number success" style="font-size: 1.2em;">+20%</span>
-                            <span class="stat-label">Productividad</span>
-                        </div>
-                    </div>
-                    
-                    <div class="solution-box">
-                        <h4>Modernización de Flota</h4>
-                        <p>Vehículos inteligentes</p>
-                        <div class="stat-item" style="margin-top: 10px;">
-                            <span class="stat-number success" style="font-size: 1.2em;">0%</span>
-                            <span class="stat-label">Incidentes robos</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; font-size: 0.9em;">
-                    <div class="solution-box">
-                        <h4>Red DHL Points</h4>
-                        <p>Entrega alternativa</p>
-                        <div class="stat-item" style="margin-top: 10px;">
-                            <span class="stat-number success" style="font-size: 1.2em;">-40%</span>
-                            <span class="stat-label">Re-entregas</span>
-                        </div>
-                    </div>
-                    
-                    <div class="solution-box">
-                        <h4>Transformación Digital</h4>
-                        <p>Ecosistema tecnológico</p>
-                        <div class="stat-item" style="margin-top: 10px;">
-                            <span class="stat-number success" style="font-size: 1.2em;">-50%</span>
-                            <span class="stat-label">Fallas totales</span>
-                        </div>
-                    </div>
-                    
-                    <div class="solution-box">
-                        <h4>Sistema de Incentivos</h4>
-                        <p>Retención de talento</p>
-                        <div class="stat-item" style="margin-top: 10px;">
-                            <span class="stat-number success" style="font-size: 1.2em;">-70%</span>
-                            <span class="stat-label">Rotación</span>
-                        </div>
+                    <div class="slide-footer">
+                        <span>Iniciativas Estratégicas</span>
+                        <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img" style="height: 30px;">
                     </div>
                 </div>
             </section>
 
             <!-- Slide 10: Cronograma -->
             <section>
-                <h2>Cronograma de Implementación</h2>
-                
-                <div class="section-header">
-                    <h3>Roadmap de Transformación - 24 Semanas</h3>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                    <div class="solution-box">
-                        <h4>Hito I: Fundación</h4>
-                        <p><strong>Semanas 1-4</strong></p>
-                        <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
-                            <div class="stat-item">
-                                <span class="stat-number">$125K</span>
-                                <span class="stat-label">Inversión</span>
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <h2>Cronograma de Implementación</h2>
+                        <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img" style="height: 40px;">
+                    </div>
+                    
+                    <div class="slide-content">
+                        <div class="section-header">
+                            <h3>Roadmap de Transformación - 24 Semanas</h3>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div class="solution-box">
+                                <h4>Hito I: Fundación</h4>
+                                <p><strong>Semanas 1-4</strong></p>
+                                <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div class="stat-item">
+                                        <span class="stat-number">$125K</span>
+                                        <span class="stat-label">Inversión</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number success">-20%</span>
+                                        <span class="stat-label">Fallas iniciales</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number success">-20%</span>
-                                <span class="stat-label">Fallas iniciales</span>
+                            
+                            <div class="solution-box">
+                                <h4>Hito II: Digitalización</h4>
+                                <p><strong>Semanas 5-12</strong></p>
+                                <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div class="stat-item">
+                                        <span class="stat-number">$195K</span>
+                                        <span class="stat-label">Inversión</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number success">100%</span>
+                                        <span class="stat-label">Sistema activo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div class="solution-box">
+                                <h4>Hito III: Capital Humano</h4>
+                                <p><strong>Semanas 13-20</strong></p>
+                                <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div class="stat-item">
+                                        <span class="stat-number">$185K</span>
+                                        <span class="stat-label">Inversión</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number success">100%</span>
+                                        <span class="stat-label">Certificados</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-box">
+                                <h4>Hito IV: Excelencia Sostenible</h4>
+                                <p><strong>Semanas 21-24</strong></p>
+                                <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div class="stat-item">
+                                        <span class="stat-number">$150K</span>
+                                        <span class="stat-label">Inversión</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number success">100%</span>
+                                        <span class="stat-label">Institucionalizado</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="solution-box">
-                        <h4>Hito II: Digitalización</h4>
-                        <p><strong>Semanas 5-12</strong></p>
-                        <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
-                            <div class="stat-item">
-                                <span class="stat-number">$195K</span>
-                                <span class="stat-label">Inversión</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number success">100%</span>
-                                <span class="stat-label">Sistema activo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                    <div class="solution-box">
-                        <h4>Hito III: Capital Humano</h4>
-                        <p><strong>Semanas 13-20</strong></p>
-                        <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
-                            <div class="stat-item">
-                                <span class="stat-number">$185K</span>
-                                <span class="stat-label">Inversión</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number success">100%</span>
-                                <span class="stat-label">Certificados</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="solution-box">
-                        <h4>Hito IV: Excelencia Sostenible</h4>
-                        <p><strong>Semanas 21-24</strong></p>
-                        <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
-                            <div class="stat-item">
-                                <span class="stat-number">$150K</span>
-                                <span class="stat-label">Inversión</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number success">100%</span>
-                                <span class="stat-label">Institucionalizado</span>
-                            </div>
-                        </div>
+                    <div class="slide-footer">
+                        <span>Cronograma de Implementación</span>
+                        <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img" style="height: 30px;">
                     </div>
                 </div>
             </section>
 
             <!-- Slide 11: Resultados Proyectados -->
             <section>
-                <h2>Impacto Proyectado de la Transformación</h2>
-                
-                <div class="section-header">
-                    <h3>Resultados Esperados a 18 Meses</h3>
-                </div>
-                
-                <div class="metric-box">
-                    <h3>Impacto Operacional</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                        <div class="stat-item">
-                            <span class="stat-number success">80%</span>
-                            <span class="stat-label">Reducción de fallas (25→5)</span>
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <h2>Impacto Proyectado de la Transformación</h2>
+                        <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img" style="height: 40px;">
+                    </div>
+                    
+                    <div class="slide-content">
+                        <div class="section-header">
+                            <h3>Resultados Esperados a 18 Meses</h3>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number success">98%</span>
-                            <span class="stat-label">Entregas puntuales (94%→98%)</span>
+                        
+                        <div class="metric-box">
+                            <h3>Impacto Operacional</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                                <div class="stat-item">
+                                    <span class="stat-number success">80%</span>
+                                    <span class="stat-label">Reducción de fallas (25→5)</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number success">98%</span>
+                                    <span class="stat-label">Entregas puntuales (94%→98%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">$1.37M</span>
+                                <span class="stat-label">Inversión Total</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number success">$500K</span>
+                                <span class="stat-label">Ahorro Anual</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number success">95%</span>
+                                <span class="stat-label">ROI en 18 meses</span>
+                            </div>
+                        </div>
+                        
+                        <div class="solution-box" style="text-align: center; margin-top: 20px;">
+                            <h3>Posicionamiento Estratégico</h3>
+                            <p><strong>Liderazgo en experiencia de entrega en el mercado latinoamericano</strong></p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="stats-grid" style="grid-template-columns: 1fr 1fr 1fr;">
-                    <div class="stat-item">
-                        <span class="stat-number">$1.37M</span>
-                        <span class="stat-label">Inversión Total</span>
+                    
+                    <div class="slide-footer">
+                        <span>Impacto Proyectado</span>
+                        <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img" style="height: 30px;">
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number success">$500K</span>
-                        <span class="stat-label">Ahorro Anual</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number success">95%</span>
-                        <span class="stat-label">ROI en 18 meses</span>
-                    </div>
-                </div>
-                
-                <div class="solution-box" style="text-align: center; margin-top: 20px;">
-                    <h3>Posicionamiento Estratégico</h3>
-                    <p><strong>Liderazgo en experiencia de entrega en el mercado latinoamericano</strong></p>
                 </div>
             </section>
 
             <!-- Slide 12: Factores Críticos -->
             <section>
-                <h2>Factores Críticos de Éxito</h2>
-                
-                <div class="section-header">
-                    <h3>Elementos Fundamentales para el Éxito del Proyecto</h3>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                    <div class="problem-box">
-                        <h4>Liderazgo y Compromiso</h4>
-                        <p>Apoyo incondicional de la alta dirección para defender la visión estratégica y asegurar recursos</p>
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <h2>Factores Críticos de Éxito</h2>
+                        <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img" style="height: 40px;">
                     </div>
                     
-                    <div class="problem-box">
-                        <h4>Disciplina Operacional</h4>
-                        <p>Seguimiento riguroso de hitos, métricas y cronograma con ajustes proactivos</p>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                    <div class="problem-box">
-                        <h4>Gestión del Cambio Cultural</h4>
-                        <p>Comunicación efectiva, capacitación continua y generación de victorias tempranas visibles</p>
+                    <div class="slide-content">
+                        <div class="section-header">
+                            <h3>Elementos Fundamentales para el Éxito del Proyecto</h3>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div class="problem-box">
+                                <h4>Liderazgo y Compromiso</h4>
+                                <p>Apoyo incondicional de la alta dirección para defender la visión estratégica y asegurar recursos</p>
+                            </div>
+                            
+                            <div class="problem-box">
+                                <h4>Disciplina Operacional</h4>
+                                <p>Seguimiento riguroso de hitos, métricas y cronograma con ajustes proactivos</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                            <div class="problem-box">
+                                <h4>Gestión del Cambio Cultural</h4>
+                                <p>Comunicación efectiva, capacitación continua y generación de victorias tempranas visibles</p>
+                            </div>
+                            
+                            <div class="problem-box">
+                                <h4>Adaptabilidad Estratégica</h4>
+                                <p>Flexibilidad para ajustar el plan según evolución del mercado y retroalimentación del cliente</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-box">
+                            <p><strong>La excelencia en la ejecución determinará el éxito de la transformación</strong></p>
+                        </div>
                     </div>
                     
-                    <div class="problem-box">
-                        <h4>Adaptabilidad Estratégica</h4>
-                        <p>Flexibilidad para ajustar el plan según evolución del mercado y retroalimentación del cliente</p>
+                    <div class="slide-footer">
+                        <span>Factores Críticos de Éxito</span>
+                        <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img" style="height: 30px;">
                     </div>
-                </div>
-                
-                <div class="metric-box">
-                    <p><strong>La excelencia en la ejecución determinará el éxito de la transformación</strong></p>
                 </div>
             </section>
 
             <!-- Slide 13: Conclusión -->
             <section class="conclusion-slide">
                 <div class="slide-container">
-                    <div class="slide-header" style="border-bottom: 2px solid var(--dhl-yellow);">
+                    <div class="slide-header">
                         <div>
                             <h2>Transformación Estratégica DHL Express</h2>
                             <h3>De la Crisis Operacional a la Excelencia en Servicio</h3>
                         </div>
-                        <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img" style="height: 50px; filter: brightness(0) invert(1);">
+                        <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img">
                     </div>
                     
                     <div class="slide-content">
-                        <div style="background: rgba(255, 204, 0, 0.1); border: 2px solid var(--dhl-yellow); border-radius: 12px; padding: 25px; margin: 25px 0;">
+                        <div class="metric-box">
                             <h3>Reflexión Estratégica</h3>
                             <p>Las <span class="highlight">25 fallas mensuales</span> no representan 25 problemas independientes</p>
-                            <p>Constituyen <span style="color: var(--dhl-yellow); font-weight: 600;">25 manifestaciones de un sistema que requiere transformación integral</span></p>
+                            <p>Constituyen <span class="highlight">25 manifestaciones de un sistema que requiere transformación integral</span></p>
                         </div>
                         
                         <div style="margin: 30px 0;">
@@ -685,17 +752,17 @@
                             <p style="font-size: 1.1em;"><strong>Transformar nuestra mayor debilidad operacional en nuestra principal ventaja competitiva</strong></p>
                         </div>
                         
-                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 20px; margin-top: 30px;">
-                            <p style="font-style: italic; font-size: 1.1em; text-align: center;">
+                        <div class="solution-box" style="text-align: center; margin-top: 30px;">
+                            <p style="font-style: italic; font-size: 1.1em;">
                                 "La excelencia en la última milla no es una ventaja competitiva opcional.<br>
                                 Es un imperativo estratégico para la supervivencia en el mercado moderno."
                             </p>
                         </div>
                     </div>
                     
-                    <div class="slide-footer" style="color: white;">
+                    <div class="slide-footer">
                         <span>Conclusiones del Estudio</span>
-                        <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img" style="height: 30px; filter: brightness(0) invert(1);">
+                        <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img">
                     </div>
                 </div>
             </section>
@@ -703,29 +770,30 @@
             <!-- Slide 14: Preguntas -->
             <section class="questions-slide">
                 <div class="slide-container">
-                    <div class="slide-header" style="border-bottom: 2px solid var(--dhl-yellow); justify-content: center;">
+                    <div class="slide-header">
                         <div class="logo-container">
-                                <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img" style="height: 50px; filter: brightness(0) invert(1);">
-                            <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img" style="height: 45px; filter: brightness(0) invert(1);">
+                            <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img">
+                            <img src="./static/img/duoc.png" alt="Duoc UC" class="duoc-logo-img">
                         </div>
                     </div>
                     
-                    <div class="slide-content" style="text-align: center;">
-                        <div class="question-icon">?</div>
-                        <h1>SESIÓN DE PREGUNTAS</h1>
-                        <h2>Discusión y Análisis</h2>
-                        
-                        <hr style="border: 2px solid var(--dhl-yellow); width: 60%; margin: 40px auto;">
-                        
-                        <div style="margin-top: 40px;">
-                            <h3>Equipo de Investigación</h3>
-                            <p style="font-size: 1.1em; margin: 20px 0;">
-                                <strong>Camila Quilodran</strong> | <strong>Leandro Navarrete</strong> | <strong>Diego Bravo</strong>
-                            </p>
+                    <div class="slide-content">
+                        <div style="text-align: center;">
+                            <div class="metric-box" style="margin-bottom: 30px;">
+                                <h1>SESIÓN DE PREGUNTAS</h1>
+                                <h2>Discusión y Análisis</h2>
+                            </div>
                             
-                            <div style="margin-top: 30px;">
-                                <p><strong>Gestión de Calidad 003V</strong></p>
-                                <p>Duoc UC | Junio 2025</p>
+                            <div style="margin-top: 40px;">
+                                <h3>Equipo de Investigación</h3>
+                                <p style="font-size: 1.1em; margin: 20px 0;">
+                                    <strong>Camila Quilodran</strong> | <strong>Leandro Navarrete</strong> | <strong>Diego Bravo</strong>
+                                </p>
+                                
+                                <div style="margin-top: 30px;">
+                                    <p><strong>Gestión de Calidad 003V</strong></p>
+                                    <p>Duoc UC | Junio 2025</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -734,8 +802,7 @@
 
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
-    <script src="./static/js/script.js"></script>
 
+    <script src="./static/js/script.js"></script>
 </body>
 </html>

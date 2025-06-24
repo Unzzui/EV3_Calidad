@@ -1,64 +1,95 @@
-// Configuración básica de Reveal.js para DHL Express
-Reveal.initialize({
-    hash: true,
-    controls: true,
-    progress: true,
-    center: true,
-    touch: true,
-    loop: false,
-    rtl: false,
-    navigationMode: 'default',
-    fragments: true,
-    embedded: false,
-    help: true,
-    pause: true,
-    showNotes: false,
-    
-    // Transiciones simples
-    transition: 'slide',
-    transitionSpeed: 'default',
-    backgroundTransition: 'fade',
-    
-    // Vista
-    viewDistance: 3,
-    mobileViewDistance: 2,
-    display: 'block',
-    hideInactiveCursor: true,
-    hideCursorTime: 5000,
-    
-    // Teclado básico
-    keyboard: {
-        27: function() { toggleFullscreen(); },
-        70: function() { toggleFullscreen(); },
-        82: function() { location.reload(); }
-    },
-    
-    plugins: []
-});
+// Sistema de presentación premium para DHL Express
+let currentSlide = 0;
+const slides = document.querySelectorAll('section');
+const totalSlides = slides.length;
 
-// Función simple para toggle fullscreen
+// Función para mostrar una slide específica
+function showSlide(index) {
+    // Ocultar todas las slides
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+    });
+    
+    // Mostrar la slide actual
+    if (slides[index]) {
+        slides[index].classList.add('active');
+        currentSlide = index;
+        updateSlideCounter();
+    }
+}
+
+// Función para ir a la siguiente slide
+function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+        showSlide(currentSlide + 1);
+    }
+}
+
+// Función para ir a la slide anterior
+function prevSlide() {
+    if (currentSlide > 0) {
+        showSlide(currentSlide - 1);
+    }
+}
+
+// Función para actualizar el contador de slides (solo en consola para debugging)
+function updateSlideCounter() {
+    console.log(`Slide ${currentSlide + 1} de ${totalSlides}`);
+}
+
+// Función para toggle fullscreen
 function toggleFullscreen() {
     if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(err => {
+        document.documentElement.requestFullscreen().then(() => {
+            console.log('Modo fullscreen activado');
+        }).catch(err => {
             console.log('Error al activar fullscreen:', err);
         });
     } else {
         document.exitFullscreen();
+        console.log('Fullscreen desactivado');
     }
 }
 
-// Event listeners básicos sin animaciones
-Reveal.on('ready', function() {
-    console.log('Presentación DHL lista');
+// Event listeners para navegación con teclado
+document.addEventListener('keydown', function(e) {
+    switch(e.key) {
+        case 'ArrowRight':
+        case ' ':
+        case 'Enter':
+            e.preventDefault();
+            nextSlide();
+            break;
+        case 'ArrowLeft':
+            e.preventDefault();
+            prevSlide();
+            break;
+        case 'F11':
+            e.preventDefault();
+            toggleFullscreen();
+            break;
+        case 'Escape':
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            }
+            break;
+        case 'Home':
+            e.preventDefault();
+            showSlide(0);
+            break;
+        case 'End':
+            e.preventDefault();
+            showSlide(totalSlides - 1);
+            break;
+    }
 });
 
-Reveal.on('slidechanged', function(event) {
-    console.log('Slide cambiado');
-});
-
-// Inicialización básica
+// Inicialización cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Sistema de presentación DHL cargado');
+    console.log('Sistema de presentación DHL premium cargado');
+    
+    // Mostrar la primera slide
+    showSlide(0);
     
     // Precargar imágenes
     const images = ['static/img/dhl-logo.svg', 'static/img/duoc.png'];
@@ -67,14 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
         img.src = src;
     });
     
-    // Configurar navegación con teclado
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'F11') {
-            e.preventDefault();
-            toggleFullscreen();
-        }
-        if (e.key === 'Escape' && document.fullscreenElement) {
-            document.exitFullscreen();
-        }
-    });
+    console.log(`Presentación premium lista con ${totalSlides} slides`);
+    console.log('Controles: Flechas ← →, Espacio, Home, End, F11 (fullscreen)');
 }); 
