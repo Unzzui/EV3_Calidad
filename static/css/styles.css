@@ -723,22 +723,7 @@ h4 {
 
 /* Navegación */
 .nav-button {
-    background: linear-gradient(135deg, var(--neutral-gray) 0%, var(--neutral-gray-dark) 100%);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-secondary);
-    font-size: 1em;
-}
-
-.nav-button:hover {
-    background: linear-gradient(135deg, var(--neutral-gray-dark) 0%, #2A3236 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(108, 123, 127, 0.4);
+    display: none !important;
 }
 
 /* Slide específica - Introducción */
@@ -911,7 +896,7 @@ h4 {
 
 .stats-mini {
     display: flex;
-    flex-direction: column;
+        flex-direction: column;
     gap: 4px;
 }
 
@@ -950,8 +935,8 @@ h4 {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    text-align: center;
-}
+        text-align: center;
+    }
 
 .factor-item:hover {
     transform: translateX(3px);
@@ -1099,6 +1084,216 @@ h4 {
     color: var(--dhl-yellow);
     font-weight: 700;
     font-size: 1.2em;
+}
+
+/* Navigation Controls - OCULTO */
+.navigation-controls {
+    display: none !important;
+}
+
+/* Progress bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFCC00, #F4C842);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Slide counter */
+#slideCounter {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    min-width: 50px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Slide indicators */
+.slide-indicators {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1000;
+}
+
+.slide-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slide-dot.active {
+    background: #FFCC00;
+    border-color: #F4C842;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    transform: scale(1.2);
+}
+
+.slide-dot:hover {
+    background: rgba(255, 204, 0, 0.6);
+    transform: scale(1.1);
+}
+
+/* Alternative: Corner progress indicator */
+.corner-progress {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.corner-progress-fill {
+    width: 100%;
+    background: linear-gradient(180deg, #FFCC00, #F4C842);
+    transition: height 0.5s ease;
+    position: relative;
+}
+
+.corner-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer-vertical 3s infinite;
+}
+
+@keyframes shimmer-vertical {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Alternative: Bottom progress bar */
+.bottom-progress {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.bottom-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFCC00, #F4C842);
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.bottom-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* Alternative: Floating slide number */
+.floating-slide-number {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFCC00;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.floating-slide-number:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navigation-controls {
+        bottom: 10px;
+        padding: 6px 12px;
+        gap: 6px;
+    }
+    
+    .progress-container {
+        min-width: 150px;
+    }
+    
+    #slideCounter {
+        font-size: 12px;
+        min-width: 40px;
+    }
+    
+    .nav-button {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .slide-indicators {
+        top: 10px;
+        right: 10px;
+        gap: 6px;
+    }
+    
+    .slide-dot {
+        width: 6px;
+        height: 6px;
+    }
 }
 
 /* Reset y configuración base - necesario para que el resto del CSS funcione */ 
