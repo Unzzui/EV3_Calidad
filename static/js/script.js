@@ -15,6 +15,25 @@ function showSlide(index) {
         slides[index].classList.add('active');
         currentSlide = index;
         updateSlideCounter();
+        
+        // Initialize special diagrams when their slides become active
+        if (index === 4) { // Gantt chart slide
+            setTimeout(() => {
+                if (typeof drawGantt === 'function') {
+                    drawGantt();
+                }
+            }, 100);
+        } else if (index === 7) { // Ishikawa diagram slide
+            console.log('Ishikawa slide activated, attempting to initialize diagram...');
+            setTimeout(() => {
+                if (typeof initIshikawaDiagram === 'function') {
+                    console.log('initIshikawaDiagram function found, calling it...');
+                    initIshikawaDiagram();
+                } else {
+                    console.error('initIshikawaDiagram function not found');
+                }
+            }, 100);
+        }
     }
 }
 
@@ -92,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlide(0);
     
     // Precargar imágenes
-    const images = ['static/img/dhl-logo.svg', 'static/img/duoc.png'];
+    const images = ['static/img/dhl-logo.svg', 'static/img/duoc.svg'];
     images.forEach(src => {
         const img = new Image();
         img.src = src;

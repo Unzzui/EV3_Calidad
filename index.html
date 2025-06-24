@@ -21,12 +21,10 @@
                     </div>
                     
                     <div class="slide-content">
-                        <h1>EXPRESS</h1>
+                        <h1 style="bottom: 120px;"><span class="express-text">Express</span></h1>
                         <h2>Mejora Continua en Proceso de Entrega</h2>
                         
-                        <div class="metric-box">
-                            <p>Aplicación del Ciclo de Deming</p>
-                        </div>
+
                         
                         <div class="stats-grid">
                             <div class="stat-item">
@@ -417,62 +415,14 @@
                         <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img" style="height: 40px;">
                     </div>
                     
-                    <div class="slide-content">
-                        <div class="section-header">
-                            <h3>Diagrama de Ishikawa - Factores Críticos de Fallas</h3>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                            <div class="problem-box">
-                                <h4>Factor Humano</h4>
-                                <ul style="margin-left: 0; list-style: none;">
-                                    <li>• Alta rotación de conductores</li>
-                                    <li>• Capacitación insuficiente</li>
-                                    <li>• Desmotivación laboral</li>
-                                    <li>• Supervisión limitada</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="problem-box">
-                                <h4>Procedimientos</h4>
-                                <ul style="margin-left: 0; list-style: none;">
-                                    <li>• Rutas desactualizadas</li>
-                                    <li>• Horarios inflexibles</li>
-                                    <li>• Comunicación deficiente</li>
-                                    <li>• Protocolos de re-entrega inexistentes</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                            <div class="problem-box">
-                                <h4>Materiales</h4>
-                                <ul style="margin-left: 0; list-style: none;">
-                                    <li>• Embalaje genérico inadecuado</li>
-                                    <li>• Etiquetas de baja calidad</li>
-                                    <li>• Documentación incompleta</li>
-                                    <li>• Protección insuficiente</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="problem-box">
-                                <h4>Equipos y Tecnología</h4>
-                                <ul style="margin-left: 0; list-style: none;">
-                                    <li>• Flota envejecida</li>
-                                    <li>• Ausencia de GPS</li>
-                                    <li>• Sistemas de seguridad deficientes</li>
-                                    <li>• Scanners obsoletos</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="metric-box">
-                            <p><strong>Efecto Multiplicador:</strong> Cada factor deficiente amplifica los problemas de los otros componentes</p>
+                    <div class="slide-content" style="align-items:center; justify-content:center;">
+                        <div id="ishikawaDiagram" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <!-- Ishikawa diagram will be generated here -->
                         </div>
                     </div>
                     
                     <div class="slide-footer">
-                        <span>Análisis de Causas Raíz</span>
+                        <span>Diagrama de Ishikawa - Factores Críticos de Fallas</span>
                         <img src="./static/img/duoc.svg" alt="Duoc UC Logo" class="duoc-logo-img" style="height: 30px;">
                     </div>
                 </div>
@@ -746,46 +696,110 @@
                 </div>
             </section>
 
-            <!-- Slide 13: Conclusión -->
-            <section class="conclusion-slide">
+            <!-- Slide 13: Conclusiones del Estudio -->
+            <section class="conclusion-slide slide-transformacion">
                 <div class="slide-container">
                     <div class="slide-header">
-                        <div>
-                            <h2>Transformación Estratégica DHL Express</h2>
-                            <h3>De la Crisis Operacional a la Excelencia en Servicio</h3>
+                        <div class="transformacion-header">
+                            <h2>CONCLUSIONES DEL ESTUDIO DHL EXPRESS</h2>
+                            <h3>Síntesis de Hallazgos y Proyecciones Estratégicas</h3>
                         </div>
                         <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img">
                     </div>
                     
                     <div class="slide-content">
-                        <div class="metric-box">
-                            <h3>Reflexión Estratégica</h3>
-                            <p>Las <span class="highlight">25 fallas mensuales</span> no representan 25 problemas independientes</p>
-                            <p>Constituyen <span class="highlight">25 manifestaciones de un sistema que requiere transformación integral</span></p>
+                        <!-- Tres Verdades Fundamentales -->
+                        <div class="verdades-fundamentales">
+                            <h4>VERDADES FUNDAMENTALES</h4>
+                            <div class="verdades-grid">
+                                <div class="verdad-item">
+                                    <div class="verdad-numero">1</div>
+                                    <div class="verdad-content">
+                                        <h5>PROBLEMA SISTÉMICO</h5>
+                                        <p>25 fallas no son problemas diferentes, sino <strong>25 síntomas del mismo mal sistémico</strong></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="verdad-item">
+                                    <div class="verdad-numero">2</div>
+                                    <div class="verdad-content">
+                                        <h5>LA ÚLTIMA MILLA DEFINE TODO</h5>
+                                        <p>La excelencia en entrega no es ventaja competitiva, es <strong>requisito de supervivencia</strong></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="verdad-item">
+                                    <div class="verdad-numero">3</div>
+                                    <div class="verdad-content">
+                                        <h5>PERSONAS = SOLUCIÓN</h5>
+                                        <p>Los conductores son <strong>embajadores de marca</strong>, no un costo a minimizar</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div style="margin: 30px 0;">
-                            <h3>La Oportunidad de Liderazgo</h3>
-                            <p style="font-size: 1.1em;"><strong>Transformar nuestra mayor debilidad operacional en nuestra principal ventaja competitiva</strong></p>
+                        <!-- Impacto Proyectado -->
+                        <div class="impacto-proyectado">
+                            <h4>IMPACTO PROYECTADO (18 MESES)</h4>
+                            <div class="impacto-grid">
+                                <div class="impacto-operacional">
+                                    <h5>OPERACIONAL</h5>
+                                    <div class="stats-mini">
+                                        <span>80% ↓ Fallas</span>
+                                        <span>98% Entregas a tiempo</span>
+                                        <span>20% ↑ Productividad</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="impacto-financiero">
+                                    <h5>FINANCIERO</h5>
+                                    <div class="stats-mini">
+                                        <span>$1.37M Inversión</span>
+                                        <span>$500K Ahorro anual</span>
+                                        <span>95% ROI</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="impacto-estrategico">
+                                    <h5>ESTRATÉGICO</h5>
+                                    <div class="stats-mini">
+                                        <span>Liderazgo regional</span>
+                                        <span>Diferenciación clara</span>
+                                        <span>Crecimiento sostenible</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="solution-box" style="text-align: center; margin-top: 30px;">
-                            <p style="font-style: italic; font-size: 1.1em;">
-                                "La excelencia en la última milla no es una ventaja competitiva opcional.<br>
-                                Es un imperativo estratégico para la supervivencia en el mercado moderno."
-                            </p>
+                        <!-- Factores Críticos -->
+                        <div class="factores-criticos">
+                            <h4>FACTORES CRÍTICOS DE ÉXITO</h4>
+                            <div class="factores-list">
+                                <div class="factor-item">
+                                    <span>Compromiso de Alta Dirección</span>
+                                </div>
+                                <div class="factor-item">
+                                    <span>Ejecución Disciplinada</span>
+                                </div>
+                                <div class="factor-item">
+                                    <span>Gestión del Cambio Cultural</span>
+                                </div>
+                                <div class="factor-item">
+                                    <span>Flexibilidad para Adaptarse</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="slide-footer">
-                        <span>Conclusiones del Estudio</span>
+                        <span>Conclusiones del Estudio de Calidad</span>
                         <img src="./static/img/duoc.svg" alt="Duoc UC Logo" class="duoc-logo-img">
                     </div>
                 </div>
             </section>
 
-            <!-- Slide 14: Preguntas -->
-            <section class="questions-slide">
+            <!-- Slide 14: Agradecimientos -->
+            <section class="thanks-slide">
                 <div class="slide-container">
                     <div class="slide-header">
                         <div class="logo-container">
@@ -796,19 +810,29 @@
                     
                     <div class="slide-content">
                         <div style="text-align: center;">
-                            <div class="metric-box" style="margin-bottom: 30px;">
-                                <h1>SESIÓN DE PREGUNTAS</h1>
-                                <h2>Discusión y Análisis</h2>
+                            <div class="thanks-main">
+                                <h1>MUCHAS GRACIAS</h1>
+                                <h2>Por su atención y tiempo</h2>
                             </div>
                             
-                            <div style="margin-top: 40px;">
+                            
+                            <div class="team-info">
                                 <h3>Equipo de Investigación</h3>
-                                <p style="font-size: 1.1em; margin: 20px 0;">
-                                    <strong>Camila Quilodran</strong> | <strong>Leandro Navarrete</strong> | <strong>Diego Bravo</strong>
-                                </p>
+                                <div class="presenters-grid">
+                                    <div class="presenter-thanks">
+                                        <h4>Camila Quilodran</h4>
+                                    </div>
+                                    <div class="presenter-thanks">
+                                        <h4>Leandro Navarrete</h4>
+                                    </div>
+                                    <div class="presenter-thanks">
+                                        <h4>Diego Bravo</h4>
+                                    </div>
+                                </div>
                                 
-                                <div style="margin-top: 30px;">
+                                <div class="course-details">
                                     <p><strong>Gestión de Calidad 003V</strong></p>
+                                    <p>Ingeniería en Administración de Empresas Mención Finanzas</p>
                                     <p>Duoc UC | Junio 2025</p>
                                 </div>
                             </div>
@@ -822,5 +846,6 @@
 
     <script src="./static/js/script.js"></script>
     <script src="./static/js/gantt-slide.js"></script>
+    <script src="./static/js/ishikawa.js"></script>
 </body>
 </html>
