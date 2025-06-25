@@ -152,6 +152,7 @@ function prevSlide() {
 function updateSlideCounter() {
     const currentSlideNumber = document.getElementById('currentSlideNumber');
     const totalSlideNumber = document.getElementById('totalSlideNumber');
+    const presenterIndicator = document.getElementById('presenterIndicator');
     
     if (currentSlideNumber) {
         currentSlideNumber.textContent = currentSlide;
@@ -161,13 +162,43 @@ function updateSlideCounter() {
         totalSlideNumber.textContent = totalSlides;
     }
     
+    // Update presenter indicator based on current slide
+    if (presenterIndicator) {
+        const presenter = getPresenterForSlide(currentSlide);
+        presenterIndicator.textContent = presenter;
+    }
+    
     // Update progress bars
     updateProgressBars();
     
     // Update slide indicators
     updateSlideIndicators();
     
-    console.log(`Slide ${currentSlide} de ${totalSlides}`);
+    console.log(`Slide ${currentSlide} de ${totalSlides} - Presentador: ${getPresenterForSlide(currentSlide)}`);
+}
+
+// Get presenter for specific slide based on script
+function getPresenterForSlide(slideNumber) {
+    const presenterMap = {
+        1: ' ',
+        2: 'DIEGO',
+        3: 'CAMILA',
+        4: 'LEO',
+        5: 'DIEGO',
+        6: 'CAMILA',
+        7: 'LEO',
+        8: 'DIEGO',
+        9: 'CAMILA', // Gantt
+        10: 'CAMILA', // Análisis de Causas
+        11: 'LEO', // 6 Iniciativas
+        12: 'DIEGO', // Cronograma
+        13: 'CAMILA', // Resultados
+        14: 'LEO', // Factores Críticos
+        15: 'DIEGO', // Conclusiones
+        16: ' ' // Agradecimientos
+    };
+    
+    return presenterMap[slideNumber] || 'N/A';
 }
 
 // Update progress bars
