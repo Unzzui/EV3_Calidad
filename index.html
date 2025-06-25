@@ -12,7 +12,7 @@
         <div class="slides">
             
             <!-- Slide 1: Título -->
-            <section class="title-slide active">
+            <section class="title-slide active" data-slide="1">
                 <div class="slide-container">
                     <div class="slide-header">
                         <div class="logo-container">
@@ -54,7 +54,7 @@
             </section>
 
             <!-- Slide 2: El Problema -->
-            <section>
+            <section data-slide="2">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2><span class="icon-delivery"></span>Situación Actual</h2>
@@ -96,7 +96,7 @@
                         </div>
                         
                         <div class="metric-box">
-                            <p><strong>Impacto Económico Anual: $174,000 USD</strong></p>
+                            <p><strong>Impacto Económico Anual: $174.000 USD</strong></p>
                         </div>
                     </div>
                     
@@ -107,8 +107,93 @@
                 </div>
             </section>
 
-            <!-- Slide 3: Por qué enfocar en entregas -->
-            <section>
+            <!-- Slide 3: Análisis de Fallas -->
+            <section class="analysis-slide" data-slide="3">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div class="analysis-header">
+                            <h2>ANÁLISIS DE FALLAS DHL EXPRESS</h2>
+                            <h3>Distribución y Impacto de Problemas de Calidad</h3>
+                        </div>
+                        <img src="./static/img/dhl-logo.svg" alt="DHL" class="dhl-logo-img">
+                    </div>
+                    
+                    <div class="slide-content">
+                        <div class="analysis-grid">
+                            <!-- Gráfico de distribución de fallas -->
+                            <div class="chart-section">
+                                <h4>DISTRIBUCIÓN DE FALLAS POR ETAPA</h4>
+                                <div class="chart-container">
+                                    <canvas id="failuresDistributionChart"></canvas>
+                                </div>
+                                <div class="chart-legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background: #FFCC00;"></span>
+                                        <span>Entrega (25 fallas)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background: #E0E0E0;"></span>
+                                        <span>Otras etapas (101 fallas)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tipos de fallas en entrega -->
+                            <div class="chart-section">
+                                <h4>TIPOS DE FALLAS EN ENTREGA</h4>
+                                <div class="chart-container">
+                                    <canvas id="deliveryFailuresChart"></canvas>
+                                </div>
+                                <div class="chart-legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background: #FF6B6B;"></span>
+                                        <span>Retrasos (14)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background: #4ECDC4;"></span>
+                                        <span>Errores (9)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background: #45B7D1;"></span>
+                                        <span>Robos (2)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Impacto económico -->
+                        <div class="impact-section">
+                            <h4>IMPACTO ECONÓMICO DE LAS FALLAS</h4>
+                            <div class="impact-cards">
+                                <div class="impact-card">
+                                    <div class="impact-number">$580</div>
+                                    <div class="impact-label">Costo por falla</div>
+                                </div>
+                                <div class="impact-card">
+                                    <div class="impact-number">$14.500</div>
+                                    <div class="impact-label">Impacto mensual</div>
+                                </div>
+                                <div class="impact-card">
+                                    <div class="impact-number">$174.000</div>
+                                    <div class="impact-label">Impacto anual</div>
+                                </div>
+                                <div class="impact-card">
+                                    <div class="impact-number">0.002%</div>
+                                    <div class="impact-label">Tasa de fallas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-footer">
+                        <span>Análisis Cuantitativo de Fallas</span>
+                        <img src="./static/img/duoc.svg" alt="Duoc UC Logo" class="duoc-logo-img">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Por qué enfocar en entregas -->
+            <section data-slide="4">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2>Enfoque Estratégico</h2>
@@ -154,8 +239,8 @@
                 </div>
             </section>
 
-            <!-- Slide 4: Ciclo DEMING - Plan -->
-            <section>
+            <!-- Slide 5: Ciclo DEMING - Plan -->
+            <section data-slide="5">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2><span class="icon-target"></span>Plan - Diagnóstico y Objetivos</h2>
@@ -193,7 +278,7 @@
                 
                         <div class="problem-box premium-hover" style="text-align: center; margin-top: 20px;">
                             <h3>Inversión Total Requerida</h3>
-                            <span style="font-size: 2em; font-weight: 700; color: var(--dhl-red);">$655,000 USD</span>
+                            <span style="font-size: 2em; font-weight: 700; color: var(--dhl-red);">$655.000 USD</span>
                             <div class="data-viz-bar"></div>
                             <div class="data-viz-bar"></div>
                             <div class="data-viz-bar"></div>
@@ -207,8 +292,8 @@
                 </div>
             </section>
 
-            <!-- Slide 5: Ciclo DEMING - Do -->
-            <section>
+            <!-- Slide 6: Ciclo DEMING - Do -->
+            <section data-slide="6">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2>Hacer - Implementación Estratégica</h2>
@@ -271,8 +356,8 @@
                 </div>
             </section>
 
-            <!-- Slide 6: Ciclo DEMING - Check -->
-            <section>
+            <!-- Slide 7: Ciclo DEMING - Check -->
+            <section data-slide="7">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2><span class="icon-graph"></span>Verificar - Sistema de Medición</h2>
@@ -294,7 +379,7 @@
                     <div class="metric-box premium-hover success-indicator">
                         <h4>Calidad</h4>
                         <span class="stat-number success">< 2</span>
-                        <span class="stat-label">Fallas por 1,000</span>
+                        <span class="stat-label">Fallas por 1.000</span>
                     </div>
                     
                     <div class="metric-box premium-hover success-indicator">
@@ -332,8 +417,8 @@
                 </div>
             </section>
 
-            <!-- Slide 7: Ciclo DEMING - Act -->
-            <section>
+            <!-- Slide 8: Ciclo DEMING - Act -->
+            <section data-slide="8">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2>Actuar - Estandarización y Mejora</h2>
@@ -391,7 +476,7 @@
             </section>
 
             <!-- Slide Gantt: Carta Gantt del Proyecto -->
-            <section>
+            <section data-slide="9">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2>Carta Gantt - Proyecto de Calidad EV3</h2>
@@ -408,7 +493,7 @@
             </section>
 
             <!-- Slide 8: Análisis de Causas -->
-            <section>
+            <section data-slide="10">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2>Análisis de Causas Raíz</h2>
@@ -429,7 +514,7 @@
             </section>
 
             <!-- Slide 9: 6 Iniciativas Clave -->
-            <section>
+            <section data-slide="11">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2>Plan de Acción - Iniciativas Estratégicas</h2>
@@ -508,7 +593,7 @@
             </section>
 
             <!-- Slide 10: Cronograma -->
-            <section>
+            <section data-slide="12">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2>Cronograma de Implementación</h2>
@@ -593,7 +678,7 @@
             </section>
 
             <!-- Slide 11: Resultados Proyectados -->
-            <section>
+            <section data-slide="13">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2>Impacto Proyectado de la Transformación</h2>
@@ -648,7 +733,7 @@
             </section>
 
             <!-- Slide 12: Factores Críticos -->
-            <section>
+            <section data-slide="14">
                 <div class="slide-container">
                     <div class="slide-header">
                         <h2>Factores Críticos de Éxito</h2>
@@ -697,7 +782,7 @@
             </section>
 
             <!-- Slide 13: Conclusiones del Estudio -->
-            <section class="conclusion-slide slide-transformacion">
+            <section class="conclusion-slide slide-transformacion" data-slide="15">
                 <div class="slide-container">
                     <div class="slide-header">
                         <div class="transformacion-header">
@@ -799,7 +884,7 @@
             </section>
 
             <!-- Slide 14: Agradecimientos -->
-            <section class="thanks-slide">
+            <section class="thanks-slide" data-slide="16">
                 <div class="slide-container">
                     <div class="slide-header">
                         <div class="logo-container">
@@ -861,6 +946,8 @@
         <span id="currentSlideNumber">1</span> / <span id="totalSlideNumber">14</span>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="./static/js/script.js"></script>
     <script src="./static/js/gantt-slide.js"></script>
     <script src="./static/js/ishikawa.js"></script>

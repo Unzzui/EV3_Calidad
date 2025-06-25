@@ -32,19 +32,47 @@ function adjustChartContainers() {
     const slides = document.querySelectorAll('section');
     
     slides.forEach(slide => {
-        const slideHeight = slide.clientHeight;
-        const chartContainer = slide.querySelector('.chart-container');
+        const chartContainers = slide.querySelectorAll('.chart-container');
         
-        if (chartContainer) {
-            const slideContent = slide.getBoundingClientRect();
-            const availableHeight = slideHeight - (slideContent.top + 150);
+        chartContainers.forEach(container => {
+            const slideHeight = slide.clientHeight;
+            const slideContent = slide.querySelector('.slide-content');
+            const slideHeader = slide.querySelector('.slide-header');
+            const slideFooter = slide.querySelector('.slide-footer');
             
-            if (availableHeight > 200) {
-                chartContainer.style.height = `${availableHeight}px`;
-            } else {
-                chartContainer.style.height = '40vh';
+            if (slideContent && slideHeader && slideFooter) {
+                const headerHeight = slideHeader.offsetHeight;
+                const footerHeight = slideFooter.offsetHeight;
+                const contentPadding = 40; // Padding del slide-content
+                const availableHeight = slideHeight - headerHeight - footerHeight - contentPadding;
+                
+                // Para la slide de análisis, ajustar específicamente
+                if (slide.classList.contains('analysis-slide')) {
+                    const analysisGrid = slide.querySelector('.analysis-grid');
+                    const impactSection = slide.querySelector('.impact-section');
+                    
+                    if (analysisGrid && impactSection) {
+                        const gridHeight = analysisGrid.offsetHeight;
+                        const impactHeight = impactSection.offsetHeight;
+                        const gridGap = 30; // Gap entre grid y impact section
+                        
+                        const totalContentHeight = gridHeight + impactHeight + gridGap;
+                        const chartHeight = Math.min(280, (availableHeight - totalContentHeight) / 2);
+                        
+                        container.style.height = `${chartHeight}px`;
+                    } else {
+                        container.style.height = '280px';
+                    }
+                } else {
+                    // Para otras slides
+                    if (availableHeight > 300) {
+                        container.style.height = '280px';
+                    } else {
+                        container.style.height = '40vh';
+                    }
+                }
             }
-        }
+        });
     });
 }
 
@@ -83,6 +111,13 @@ function navigateToSlide(slideNumber) {
                     console.error('initIshikawaDiagram function not found');
                 }
             }, 100);
+        } else if (slideNumber === 3) { // Analysis slide
+            console.log('Analysis slide activated, initializing charts...');
+            setTimeout(() => {
+                createFailuresDistributionChart();
+                createDeliveryFailuresChart();
+                adjustChartContainers();
+            }, 200);
         }
         
         // Adjust chart container when slide changes
@@ -527,10 +562,19 @@ function observeSlides() {
                 if (slideNumber > 0 && !slideElement.hasAttribute('data-chart-created')) {
                     slideElement.setAttribute('data-chart-created', 'true');
                     
+                    // Create specific charts based on slide content
+                    if (slideElement.classList.contains('analysis-slide')) {
+                        console.log('Creating analysis charts for slide', slideNumber);
+                        setTimeout(() => {
+                            createFailuresDistributionChart();
+                            createDeliveryFailuresChart();
+                        }, 300);
+                    }
+                    
                     // Adjust chart container after chart creation
                     setTimeout(() => {
                         adjustChartContainers();
-                    }, 200);
+                    }, 500);
                 }
             }
         });
@@ -539,6 +583,198 @@ function observeSlides() {
     // Observe all sections
     document.querySelectorAll('section').forEach(slide => {
         observer.observe(slide);
+    });
+    
+    // Initialize charts for the first slide if it's the analysis slide
+    const firstSlide = document.querySelector('section.active');
+    if (firstSlide && firstSlide.classList.contains('analysis-slide')) {
+        setTimeout(() => {
+            createFailuresDistributionChart();
+            createDeliveryFailuresChart();
+        }, 500);
+    }
+}
+
+// Create failures distribution chart
+function createFailuresDistributionChart() {
+    const ctx = document.getElementById('failuresDistributionChart');
+    if (!ctx) return;
+    
+    const failuresDistributionChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Entrega (25 fallas)', 'Otras etapas (101 fallas)'],
+            datasets: [{
+                data: [25, 101],
+                backgroundColor: [
+                    '#FFCC00',
+                    '#E0E0E0'
+                ],
+                borderColor: [
+                    '#F4C842',
+                    '#CCCCCC'
+                ],
+                borderWidth: 2,
+                hoverBorderWidth: 3,
+                hoverBorderColor: '#FFFFFF'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+                duration: 1500,
+                easing: 'easeOutQuart'
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    titleFont: {
+                        size: 16
+                    },
+                    bodyFont: {
+                        size: 14
+                    },
+                    padding: 15,
+                    cornerRadius: 8,
+                    displayColors: false,
+                    callbacks: {
+                        label: function(context) {
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = ((context.parsed / total) * 100).toFixed(1);
+                            return `${context.label}: ${context.parsed} fallas (${percentage}%)`;
+                        }
+                    }
+                },
+                datalabels: {
+                    color: '#000000',
+                    font: {
+                        weight: 'bold',
+                        size: 14
+                    },
+                    formatter: function(value, context) {
+                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                        const percentage = ((value / total) * 100).toFixed(1);
+                        return `${value}\n(${percentage}%)`;
+                    }
+                }
+            },
+            cutout: '60%'
+        }
+    });
+}
+
+// Create delivery failures chart
+function createDeliveryFailuresChart() {
+    const ctx = document.getElementById('deliveryFailuresChart');
+    if (!ctx) return;
+    
+    const deliveryFailuresChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Retrasos', 'Errores', 'Robos'],
+            datasets: [{
+                label: 'Cantidad de Fallas',
+                data: [14, 9, 2],
+                backgroundColor: [
+                    '#FF6B6B',
+                    '#4ECDC4',
+                    '#45B7D1'
+                ],
+                borderColor: [
+                    '#FF5252',
+                    '#26A69A',
+                    '#1976D2'
+                ],
+                borderWidth: 2,
+                borderRadius: 8,
+                hoverBorderWidth: 3,
+                hoverBorderColor: '#FFFFFF'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+                duration: 1500,
+                easing: 'easeOutQuart'
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    },
+                    ticks: {
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        font: {
+                            size: 12
+                        },
+                        stepSize: 2
+                    },
+                    title: {
+                        display: true,
+                        text: 'Cantidad de Fallas',
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        font: {
+                            size: 14,
+                            weight: 'normal'
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    },
+                    ticks: {
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    titleFont: {
+                        size: 16
+                    },
+                    bodyFont: {
+                        size: 14
+                    },
+                    padding: 15,
+                    cornerRadius: 8,
+                    displayColors: false,
+                    callbacks: {
+                        label: function(context) {
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = ((context.parsed.y / total) * 100).toFixed(1);
+                            return `${context.parsed.y} fallas (${percentage}% del total)`;
+                        }
+                    }
+                },
+                datalabels: {
+                    color: '#FFFFFF',
+                    anchor: 'end',
+                    align: 'top',
+                    offset: 0,
+                    font: {
+                        weight: 'bold',
+                        size: 14
+                    },
+                    formatter: function(value) {
+                        return value;
+                    }
+                }
+            }
+        }
     });
 }
 

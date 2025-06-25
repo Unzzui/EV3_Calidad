@@ -14,7 +14,7 @@ const projectData = {
                 { name: "A1.4 Establecimiento del War Room", start: 3, end: 4 }
             ],
             responsible: "Gerente de Operaciones",
-            resources: "$125,000",
+            resources: "$125.000",
             deliverable: "Reducción inicial del 20% en fallas"
         },
         {
@@ -28,7 +28,7 @@ const projectData = {
                 { name: "A2.4 Rollout completo", start: 11, end: 12 }
             ],
             responsible: "Director de Tecnología",
-            resources: "$195,000",
+            resources: "$195.000",
             deliverable: "Sistema tecnológico 100% operativo"
         },
         {
@@ -42,7 +42,7 @@ const projectData = {
                 { name: "A3.4 Evaluación y certificación", start: 19, end: 20 }
             ],
             responsible: "VP de Recursos Humanos",
-            resources: "$185,000",
+            resources: "$185.000",
             deliverable: "100% conductores certificados"
         },
         {
@@ -56,7 +56,7 @@ const projectData = {
                 { name: "A4.4 Celebración y reconocimientos", start: 24, end: 24 }
             ],
             responsible: "Director de Calidad",
-            resources: "$150,000",
+            resources: "$150.000",
             deliverable: "Sistema de mejora continua establecido"
         }
     ]
